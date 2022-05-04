@@ -10,12 +10,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.stereotype.Repository;
 
-//@RepositoryRestResource(collectionResourceRel = "employee", path = "employee")
-@Repository
+@RepositoryRestResource(collectionResourceRel = "employee", path = "employee")
 public interface Employees extends PagingAndSortingRepository<Employee, Long> {
 
-//    List<Employee> findByLastName(@Param("name") String name);
-
-    @RestResource(rel = "lastname", path="lastname")
-    Page<Employee> findByLastName(@Param("query") String query, Pageable page);
+    List<Employee> findByLastName(@Param("name") String name);
 }
