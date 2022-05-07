@@ -1,5 +1,5 @@
 # RESTHotel
-RESTHotel 프로젝트는 호텔에서 사용자의 모든 요청을 자동으로 처리 할 수 있도록 해주는 Application 입니다. (최소한의 인원으로 운영이 가능)    
+RESTHotel은 호텔에서 사용자의 모든 요청을 자동으로 처리 하여 최소한의 인원으로 호텔을 운영 할 수 있게 해주는 Application 입니다.    
 또한 REST API를 제공하며 Springboot 기반의 boilerplate이기도 합니다.
 
 ## QuickStart
