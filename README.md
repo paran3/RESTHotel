@@ -28,5 +28,5 @@ The project uses:
 - Service
    - Cleaning
    - Cooking
-- Reservation
+- Booking
 - Payment
