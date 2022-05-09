@@ -22,6 +22,6 @@
 * ETC...
 
 #### 3. Room Status 변경에 따라서 처리해야 되는 추가 로직은 어디에 작성해야 하는가?
-* CheckOut 시 Room의 상태는 'Leaving' or 'Required Cleaning'으로 변경 될 텐데, 해당 시점에서 Cleang Service의 add room 메서드가 호출되어야 한다.
--> RepositoryEventHandler class의 @HandleAfterSave를 적용한다.
+* CheckOut 시 Room의 상태는 'Leaving' or 'Required Cleaning'으로 변경 될 텐데, 해당 시점에서 Cleang Service의 add room 메서드가 호출되어야 한다.  
+-> RepositoryEventHandler class의 @HandleAfterSave를 적용한다.  
 [참고 : @RepositoryEventHandler](https://www.baeldung.com/spring-data-rest-events)
