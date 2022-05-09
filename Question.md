@@ -25,3 +25,4 @@
 * CheckOut 시 Room의 상태는 'Leaving' or 'Required Cleaning'으로 변경 될 텐데, 해당 시점에서 Cleang Service의 add room 메서드가 호출되어야 한다.  
 -> RepositoryEventHandler class의 @HandleAfterSave를 적용한다.  
 [참고 : @RepositoryEventHandler](https://www.baeldung.com/spring-data-rest-events)
+* 추가로 @RepositoryRestResource사용 시 custom Api가 필요하면 @RepositoryRestController를 사용하여 Controller를 생성하면 된다.
