@@ -12,16 +12,16 @@ public class EmployeeInitializer {
 
     private Employees employees;
 
-    public EmployeeInitializer(Employees employees){
+    public EmployeeInitializer(Employees employees) {
 
         this.employees = employees;
 
         System.out.println("EmployeeInitializer");
 
-        Employee e1 = new Employee("TaeMin","Kim");
-        Employee e2 = new Employee("GilDong","Hong");
+        Employee e1 = new Employee("TaeMin", "Kim", Status.FREE);
+        Employee e2 = new Employee("GilDong", "Hong", Status.BUSY);
 
-        Stream.of(e1,e2)
+        Stream.of(e1, e2)
                 .forEach(this.employees::save);
 
     }

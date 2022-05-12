@@ -1,11 +1,16 @@
 package com.restcompany.employee;
 
+import com.restcompany.room.Room;
+import lombok.Data;
+import org.springframework.scheduling.annotation.Async;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Data
 public class Employee {
 
     @Id
@@ -14,29 +19,48 @@ public class Employee {
 
     private String firstName;
     private String lastName;
+    private Status status;
 
     public Employee(){
 
     }
 
-    public Employee(String firstName, String lastName) {
+    public Employee(String firstName, String lastName, Status status) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.status = status;
     }
 
-    public String getFirstName() {
-        return firstName;
+
+    public Employee markBusy() {
+
+        if (this.status != Status.FREE) {
+            throw new IllegalStateException(
+                    String.format("Employee must be in state free to set busy! Current status: %s", this.status));
+        }
+
+        this.status = Status.BUSY;
+
+        return this;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public Employee markFree() {
+
+        if (this.status != Status.BUSY) {
+            throw new IllegalStateException(
+                    String.format("Employee must be in state busy to set free! Current status: %s", this.status));
+        }
+
+        this.status = Status.FREE;
+
+        return this;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void cleaning(Integer roomNumber){
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

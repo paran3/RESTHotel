@@ -10,4 +10,8 @@ import java.util.List;
 public interface Rooms extends PagingAndSortingRepository<Room,Integer> {
 
     List<Room> findByStatus(@Param("status") Status status);
+
+    Boolean isRequiredCleaning();
+
+    List<Room> requiredCleaning();
 }
