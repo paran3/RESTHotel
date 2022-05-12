@@ -25,6 +25,7 @@ The project uses:
 ## Domain
 
 - Room
+- Employee
 - Service
    - Cleaning
    - Cooking
