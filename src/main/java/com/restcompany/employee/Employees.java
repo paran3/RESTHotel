@@ -9,9 +9,26 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(collectionResourceRel = "employees", path = "employees")
 public interface Employees extends PagingAndSortingRepository<Employee, Long> {
 
-    Boolean isAvailable();
-
-    List<Employee> available();
-
     List<Employee> findByStatus(@Param("status") Status status);
+
+    Integer countByStatus(@Param("status") Status status);
+
+    default List<Employee> getAvailable() {
+        return findByStatus(Status.FREE);
+    }
+
+    default boolean isAvailable() {
+        if (countByStatus(Status.FREE) > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    default Employee markFree(Employee employee){
+        return save(employee.markFree());
+    }
+
+    default Employee markBusy(Employee employee){
+        return save(employee.markBusy());
+    }
 }

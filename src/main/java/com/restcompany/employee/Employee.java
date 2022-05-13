@@ -56,9 +56,14 @@ public class Employee {
         return this;
     }
 
+    @Async
     public void cleaning(Integer roomNumber){
         try {
-            Thread.sleep(30000);
+            System.out.println("Employee id : " + this.id + ", Room Number : " + roomNumber);
+            System.out.println("start cleaning");
+            Thread.sleep(10000);
+            System.out.println("Employee id : " + this.id + ", Room Number : " + roomNumber);
+            System.out.println("finish cleaning");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

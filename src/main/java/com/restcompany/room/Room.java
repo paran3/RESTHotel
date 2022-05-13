@@ -36,7 +36,7 @@ public class Room {
 
     public Room markReady() {
 
-        if (this.status != Status.AFTER_CLEANING) {
+        if (this.status != Status.CLEANING) {
             throw new IllegalStateException(
                     String.format("Room must be in state (after cleaning) to set ready! Current status: %s", this.status));
         }
@@ -83,16 +83,4 @@ public class Room {
 
     }
 
-    public Room markAfterCleaning() {
-
-        if (this.status != Status.CLEANING) {
-            throw new IllegalStateException(
-                    String.format("Room must be in state cleaning to set (after cleaning) status! Current status: %s", this.status));
-        }
-
-        this.status = Status.AFTER_CLEANING;
-
-        return this;
-
-    }
 }

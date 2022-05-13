@@ -19,9 +19,12 @@ public class EmployeeInitializer {
         System.out.println("EmployeeInitializer");
 
         Employee e1 = new Employee("TaeMin", "Kim", Status.FREE);
-        Employee e2 = new Employee("GilDong", "Hong", Status.BUSY);
+        Employee e2 = new Employee("GilDong", "Hong", Status.FREE);
+        Employee e3 = new Employee("Jack", "Holy", Status.FREE);
+        Employee e4 = new Employee("Pretty", "Kong", Status.FREE);
+        Employee e5 = new Employee("Elsa", "Froze", Status.FREE);
 
-        Stream.of(e1, e2)
+        Stream.of(e1, e2,e3,e4,e5)
                 .forEach(this.employees::save);
 
     }
