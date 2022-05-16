@@ -1,9 +1,11 @@
 package com.restcompany.room;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.stream.Stream;
 
+@Slf4j
 @Service
 public class RoomInitializer {
 
@@ -13,7 +15,7 @@ public class RoomInitializer {
 
         this.rooms = rooms;
 
-        System.out.println("RoomInitializer");
+        LOG.info("RoomInitializer");
 
         Room r1 = new Room(101, 2, 10000, "Double", Status.BEFORE_CLEANING);
         Room r2 = new Room(102, 2, 10000, "Double", Status.BEFORE_CLEANING);

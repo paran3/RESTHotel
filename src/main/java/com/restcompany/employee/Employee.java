@@ -2,6 +2,7 @@ package com.restcompany.employee;
 
 import com.restcompany.room.Room;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 
 @Entity
 @Data
+@Slf4j
 public class Employee {
 
     @Id
@@ -56,14 +58,13 @@ public class Employee {
         return this;
     }
 
-    @Async
     public void cleaning(Integer roomNumber){
         try {
-            System.out.println("Employee id : " + this.id + ", Room Number : " + roomNumber);
-            System.out.println("start cleaning");
+            LOG.info("Employee id : " + this.id + ", Room Number : " + roomNumber);
+            LOG.info("start cleaning");
             Thread.sleep(10000);
-            System.out.println("Employee id : " + this.id + ", Room Number : " + roomNumber);
-            System.out.println("finish cleaning");
+            LOG.info("Employee id : " + this.id + ", Room Number : " + roomNumber);
+            LOG.info("finish cleaning");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

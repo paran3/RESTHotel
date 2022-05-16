@@ -1,12 +1,14 @@
 package com.restcompany.employee;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.stereotype.Service;
 
 import java.util.stream.Stream;
 
+@Slf4j
 @Service
 public class EmployeeInitializer {
 
@@ -16,7 +18,7 @@ public class EmployeeInitializer {
 
         this.employees = employees;
 
-        System.out.println("EmployeeInitializer");
+        LOG.info("EmployeeInitializer");
 
         Employee e1 = new Employee("TaeMin", "Kim", Status.FREE);
         Employee e2 = new Employee("GilDong", "Hong", Status.FREE);
