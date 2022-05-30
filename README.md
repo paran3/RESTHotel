@@ -1,5 +1,5 @@
-# RESTHotel
-RESTHotel은 호텔에서 사용자의 모든 요청을 자동으로 처리 하여 최소한의 인원으로 호텔을 운영 할 수 있게 해주는 Application 입니다.    
+# RESTairdnd
+RESTairdnd는 숙소(호텔,집 등)에서 사용자의 모든 요청을 자동으로 처리 하여 최소한의 인원으로 운영 할 수 있게 해주는 WAS 입니다.    
 또한 REST API를 제공하며 Springboot 기반의 boilerplate이기도 합니다.
 
 ## QuickStart
